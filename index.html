@@ -18,12 +18,12 @@
     <header class="header-area">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-3">
+          <div class="col-lg-3 col-6">
             <a href="index.html" class="logo">
               <img src="assets/images/logo.svg" alt="logo" />
             </a>
           </div>
-          <div class="col-lg-9">
+          <div class="col-lg-9 responsive-menu">
             <ul class="mainmenu d-flex align-items-center justify-content-end">
               <li>
                 <a class="active" href="index.html">Home</a>
@@ -41,6 +41,13 @@
                 <a href="blog.html"> Blog</a>
               </li>
               <li><a class="contact" href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="col-6 d-block d-lg-none text-right">
+            <ul class="menu-trigger">
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
           </div>
         </div>
@@ -670,7 +677,7 @@
               </p>
             </div>
           </div>
-          <div class="col-12 col-lg-10">
+          <div class="col-12 col-xl-10">
             <ul
               class="nav it-service-tab wow fadeInUp"
               data-wow-duration=".3s"
@@ -1547,10 +1554,9 @@
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 1,
+              slidesToScroll: 1,
               infinite: true,
-              dots: true,
             },
           },
           {
@@ -1587,7 +1593,6 @@
               slidesToShow: 2,
               slidesToScroll: 2,
               infinite: true,
-              dots: true,
             },
           },
           {

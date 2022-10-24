@@ -22,6 +22,8 @@
       $(".header-area").removeClass("sticky");
     }
   });
-
+  $(document).on("click", ".menu-trigger", function () {
+    $(".responsive-menu").toggleClass("active");
+  });
   new WOW().init();
 })(jQuery);
