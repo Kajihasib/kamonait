@@ -74,6 +74,27 @@ body {
     }
     a {
       display: inline-flex;
+      position: relative;
+      padding: 5px 0px;
+      &:hover {
+        color: $themeColor;
+      }
+      &.active {
+        color: $themeColor;
+        &::before {
+          width: 100%;
+        }
+      }
+      &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        content: "";
+        background: $themeColor;
+        transition: all 0.4s ease-in-out 0s;
+      }
       &.contact {
         border: 2px solid #cecece;
         border-radius: 30px;
@@ -1070,10 +1091,16 @@ body {
   background: #f9f9f9;
   padding: 180px 0px 100px;
   .title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 40px;
     line-height: 47px;
     margin-bottom: 0;
+  }
+  .subtitle {
+    color: $titleColor;
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 5px;
   }
 }
 .story-area {
@@ -1184,4 +1211,114 @@ body {
 }
 .developer-img {
   line-height: 0px;
+}
+.portfilo-menu {
+  justify-content: center;
+  margin-bottom: 50px;
+  li {
+    margin: 0px 7.5px;
+    a {
+      min-height: 45px;
+      min-width: 160px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c9c9c9;
+      border-radius: 30px;
+      color: $titleColor;
+      padding: 5px 20px;
+      &.active {
+        background: $themeColor;
+        color: #fff;
+        border-color: $themeColor;
+      }
+    }
+  }
+}
+.project-wrap {
+  position: relative;
+  margin-bottom: 25px;
+  &:hover {
+    &::before {
+      width: 150px;
+      height: 150px;
+      opacity: 1;
+    }
+    .project-content {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &::before {
+    content: "";
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    border-left: 5px solid $themeColor;
+    border-top: 5px solid $themeColor;
+    transition: all 0.4s ease-in-out 0s;
+  }
+  img {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .project-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+    .name {
+      color: #fff;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .title {
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+    }
+  }
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.pagination-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  li {
+    margin: 0px 3px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      min-width: 40px;
+      border: 1px solid #e5e5e5;
+      color: $titleColor;
+      border-radius: 2px;
+      &.active {
+        color: #fff;
+        background: $themeColor;
+        border-color: $themeColor;
+      }
+    }
+  }
 }
